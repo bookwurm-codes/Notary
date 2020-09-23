@@ -6,20 +6,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="app/style.css">
+    <script src="app/app.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="app/style.css">
+
+
   </head>
   <body>
+    <!-- 12 columns wide Bootstrap container -->
     <div class="container">
         <div class="row">
-            <!-- book window -->
-            <div class="col-md-8">
+            <!-- book window (8 columns wide)-->
+            <div class="col-md-7">
                 <img class="responsive" src="app/NotoryLogowhiteMed.png" alt="Notary Logo">
+            </div>
+            <!-- sidebar -->
+            <div class="col-md-5">
+                <!-- search widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">Search</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" id="search-term" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer" id="search-stat"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- book window (8 columns wide)-->
+            <div class="col-md-7">
+                <!-- card component, bottom margin set *1.25 -->
                 <div class="card mb-4">
                     <h2 class="card-header" id="filename">Book Title</h2>
                     <div class="card-body">
-                        <div class="display-box scroll-box" id="file-content">
+                        <div class="display-box scroll-box" id="book-content">
                             Choose a book on the right
                         </div>
                     </div>
@@ -29,7 +55,64 @@
                 </div> 
             </div>
             <!-- sidebar -->
-            <div class="col-md-4"></div>
+            <div class="col-md-5">
+                <!-- Select Book Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">Select A Book</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md">
+                                <ul class="list-unstyled mb-0">
+                                   <li><a href="#" onclick='loadBook("AliceInWonderland.txt","Alice in Wonderland")'>Alice in Wonderland</a></li>
+                                    <li><a href="#">Lord of the Rings</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Most common words -->
+                <div class="card my-4">
+                    <h5 class="card-header">Most Common Words</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md">
+                                <ul class="list-unstyled mb-0" id="most-common">
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- rarest words -->
+                <div class="card my-4">
+                    <h5 class="card-header">Rarest Words</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md">
+                                <ul class="list-unstyled mb-0" id="rarest">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- book stats -->
+                <div class="card my-4">
+                    <h5 class="card-header">Book Stats</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md">
+                                <ul class="list-unstyled mb-0">
+                                    <li id="year"></li>
+                                    <li id="doc-length"></li>
+                                    <li id="word-count"></li>
+                                    <li id="char-count"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>  
     <!-- Optional JavaScript -->
