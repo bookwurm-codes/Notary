@@ -6,3 +6,24 @@ body {
     /* W3C, IE 10+/Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, #2c3e50, #2980b9);
 }
+
+.responsive {
+    max-width: 75%;
+    height: auto;
+}
+
+img {
+    padding: 1rem;
+}
+
+.display-box {
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.scroll-box {
+    overflow-y: auto;
+    height: 31.25rem;
+    float: left;
+    padding: 1rem;
+}
