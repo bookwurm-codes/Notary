@@ -17,7 +17,19 @@ function loadBook(filename, bookName) {
     xhr.onreadystatechange = function () {
         // is request done (4) and good (200)
         if(xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById("book-content").innerHTML = xhr.responseText;
+            currentBook = xhr.responseText;
+
+            // replace line breaks and carriage returns with a <br>
+            currentBook = currentBook.replace(/(?:\r\n|\n|\r)/g,"<br>");
+
+            // replace underscores with italics
+            currentBook = currentBook.replace(/_(?=[A-Za-z])/g,"<i>");
+            currentBook = currentBook.replace(/(?<=[A-Za-z.])_/g,"</i>");
+            
+            console.log("underscores squashed");
+            
+            document.getElementById("book-content").innerHTML = currentBook;
+
             document.getElementById("book-content").scrollTop = 0;
         }
     };
