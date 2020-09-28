@@ -108,7 +108,7 @@
                             <div class="col-md">
                                 <ul class="list-unstyled mb-0">
                                     <li id="year"></li>
-                                    <li id="doc-length"></li>
+                                    <li id="book-length"></li>
                                     <li id="word-count"></li>
                                     <li id="char-count"></li>
                                 </ul>
@@ -118,7 +118,13 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
+    <!-- Template for dynamically adding list items to lists -->
+    <script id="template-ul-items" type="text/template">
+        <li>
+            {{val}}
+        </li>
+    </script>  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
